@@ -13,14 +13,14 @@ import (
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 
-	fmt.Printf("\nWelcome to Email Checker!\n\n")
-	fmt.Printf("Enter an email address name to check, or type 'exit' to quit: ")
+	fmt.Printf("\nWelcome to Email Checker!\n")
+	fmt.Printf("Enter an email address to check, or type 'exit' to quit: ")
 
 	for scanner.Scan() {
 		input := scanner.Text()
 
 		if input == "exit" || input == "quit" {
-			fmt.Println("\nExiting Email Checker...")
+			fmt.Println("Exiting Email Checker...")
 			return
 		}
 
@@ -80,7 +80,7 @@ func checkDNSRecords(email string) {
 		}
 		fmt.Printf("\nHowever, some valid emails may not have certain DNS records, or their DNS records may not be configured properly.\n")
 	} else {
-		fmt.Printf("\nEmail %s appears to be valid\n", email)
+		fmt.Printf("\nEmail %s appears to be valid.\n\n", email)
 		fmt.Printf("MX Records: %v\n", mxRecords)
 		fmt.Printf("SPF Records: %v\n", spfRecords)
 		fmt.Printf("DMARC Records: %v\n", dmarcRecords)
